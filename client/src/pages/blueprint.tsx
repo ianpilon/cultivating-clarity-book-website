@@ -64,17 +64,19 @@ export default function Blueprint() {
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-black to-black" />
             
             {/* Center Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-12 text-center">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-12 text-center bg-black/80 backdrop-blur-sm">
               <motion.div 
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-24 h-32 md:w-32 md:h-44 bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative"
+                className="w-full max-w-2xl aspect-video bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-                <FileText className="text-white/40" size={48} strokeWidth={1} />
-                {/* Corner detail */}
-                <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-bl from-white/20 to-transparent" />
+                <img 
+                  src="/blueprint-preview.png" 
+                  alt="Context Mapping Blueprint Preview" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
               </motion.div>
 
               <div className="flex flex-col gap-2">
