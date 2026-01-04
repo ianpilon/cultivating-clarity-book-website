@@ -51,7 +51,7 @@ export default function Home() {
           <a href="#video" className="hover:text-white transition-colors">Video</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</a>
-          <div className="w-12 ml-4"></div>
+          <a href="#buy" className="hover:text-white transition-colors">Buy a Copy</a>
         </motion.div>
       </nav>
 
