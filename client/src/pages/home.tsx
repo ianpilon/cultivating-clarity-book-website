@@ -382,14 +382,13 @@ export default function Home() {
             {/* Video Embed Section */}
             <div className="flex-1 w-full flex flex-col items-center justify-center">
               <div className="w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden border border-white/10 shadow-2xl relative group">
-                <video 
-                  controls 
-                  className="w-full h-full object-cover"
-                  poster="/video-poster.jpg" 
-                >
-                  <source src="https://video.twimg.com/amplify_video/1969043510260101121/vid/avc1/1920x1080/x9Z9755kl6YcQdAW.mp4?tag=21" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/bmxAUfjpjrs"
+                  title="Featured Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </motion.div>
