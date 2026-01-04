@@ -191,21 +191,11 @@ export default function Home() {
       {/* Noise overlay handled in global CSS */}
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 p-8 flex justify-between items-center z-50">
+      <nav className="fixed top-0 left-0 right-0 p-8 flex justify-center items-center z-50">
         <motion.div 
-          key={activeSection}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl font-display font-light tracking-widest text-primary"
-        >
-          {activeSection}/.
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
           className="flex items-center gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/80"
         >
           <a href="#video" className="hover:text-white transition-colors">Video</a>
