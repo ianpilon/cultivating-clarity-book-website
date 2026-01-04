@@ -85,7 +85,7 @@ const SOCIAL_POSTS = [
     date: "Oct 24, 2025",
     content: "Cultivating Clarity helped me reframe 'context' from something static into something dynamic — a living system of motivations, constraints, and emotions.",
     verified: false,
-    avatar: null,
+    avatar: "https://media.licdn.com/dms/image/v2/D4E03AQHp-LPpO8LotA/profile-displayphoto-crop_800_800/B4EZmAXKFiIUAI-/0/1758795178941?e=1769040000&v=beta&t=qiby4pzn2miuyS3Geb20oEfe_HTrSGoBrKQClMPVIXw",
     isAmazonReview: true
   },
   {
