@@ -74,8 +74,8 @@ export default function Home() {
             className="flex flex-col gap-12 items-start"
           >
             <div className="flex flex-col gap-12 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              <span className="text-vertical hover:text-white transition-colors cursor-pointer whitespace-nowrap">Instagram</span>
-              <span className="text-vertical hover:text-white transition-colors cursor-pointer whitespace-nowrap">Twitter</span>
+              <a href="https://www.linkedin.com/in/ianpilon/" target="_blank" rel="noopener noreferrer" className="text-vertical hover:text-white transition-colors cursor-pointer whitespace-nowrap">Linkedin</a>
+              <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" className="text-vertical hover:text-white transition-colors cursor-pointer whitespace-nowrap">Twitter</a>
             </div>
           </motion.div>
         </div>
