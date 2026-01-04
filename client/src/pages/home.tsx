@@ -95,12 +95,12 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="font-display font-thin text-6xl md:text-[7rem] lg:text-[8rem] leading-[0.9] text-white tracking-wide"
+              className="font-display font-thin text-5xl md:text-[5rem] lg:text-[6rem] leading-[0.9] text-white tracking-wide"
             >
-              Minimalis<br/>
-              <span className="ml-24 flex items-center gap-6">
+              Ian<br/>
+              <span className="ml-24 flex items-center gap-6 whitespace-nowrap">
                 <span className="h-[2px] w-16 md:w-24 bg-white/50 block"></span>
-                simo
+                Timotheos Pilon
               </span>
             </motion.h1>
             
@@ -108,9 +108,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="mt-12 ml-24 max-w-xs text-sm text-white/70 leading-relaxed font-light border-b border-white/20 pb-4"
+              className="mt-12 ml-24 max-w-sm text-sm text-white/70 leading-relaxed font-light border-b border-white/20 pb-4"
             >
-              We aim to deliver a <span className="text-white font-normal underline decoration-primary decoration-1 underline-offset-4">diverse understanding</span> of minimalism in many areas.
+              Author of <span className="text-white font-normal italic">Cultivating Clarity</span>: The art of discerning what matters using <span className="text-white font-normal underline decoration-primary decoration-1 underline-offset-4">contextual intelligence</span>
             </motion.p>
           </div>
         </div>
