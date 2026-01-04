@@ -398,7 +398,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
               >
-                Buy on Amazon Canada
+                🇨🇦 Buy on Amazon Canada
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05 }}
@@ -408,7 +408,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
               >
-                Buy on Amazon USA
+                🇺🇸 Buy on Amazon USA
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05 }}
@@ -418,7 +418,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
               >
-                Buy on Amazon Germany
+                🇩🇪 Buy on Amazon Germany
               </motion.a>
             </div>
           </motion.div>
