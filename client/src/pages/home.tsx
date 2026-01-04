@@ -536,6 +536,50 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl w-full flex flex-col gap-8 h-full items-center"
           >
+            {/* Social Proof Toast Popups */}
+            <div className="w-full flex justify-center mb-4">
+              <motion.div
+                key={currentSocialPost}
+                initial={{ opacity: 0, x: 100, scale: 0.9 }}
+                animate={{ 
+                  opacity: showSocialPost ? 1 : 0, 
+                  x: showSocialPost ? 0 : -100,
+                  scale: showSocialPost ? 1 : 0.9
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-black/90 border border-white/20 rounded-sm p-4 max-w-md shadow-2xl backdrop-blur-sm"
+              >
+                <div className="flex items-start gap-3">
+                  {SOCIAL_POSTS[currentSocialPost].avatar ? (
+                    <img 
+                      src={SOCIAL_POSTS[currentSocialPost].avatar} 
+                      alt={SOCIAL_POSTS[currentSocialPost].name}
+                      className="w-10 h-10 rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary shrink-0">
+                      {SOCIAL_POSTS[currentSocialPost].name.charAt(0)}
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1 flex-wrap">
+                      <span className="text-white text-xs font-medium">{SOCIAL_POSTS[currentSocialPost].name}</span>
+                      {SOCIAL_POSTS[currentSocialPost].verified && (
+                        <svg className="w-3.5 h-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/>
+                        </svg>
+                      )}
+                      <span className="text-muted-foreground text-[10px]">{SOCIAL_POSTS[currentSocialPost].handle}</span>
+                      <span className="text-muted-foreground text-[10px]">· {SOCIAL_POSTS[currentSocialPost].date}</span>
+                    </div>
+                    <p className="text-white/80 text-xs font-mono mt-1 leading-relaxed">
+                      {SOCIAL_POSTS[currentSocialPost].content}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
             {/* Header */}
             <div className="flex flex-col gap-4 border-b border-white/10 pb-8 text-center items-center">
               <span className="text-xs uppercase tracking-[0.2em] text-primary">Get Your Copy</span>
@@ -621,50 +665,6 @@ export default function Home() {
                   </motion.div>
                 )}
               </div>
-            </div>
-
-            {/* Social Proof Toast Popups */}
-            <div className="mt-16 w-full flex justify-center">
-              <motion.div
-                key={currentSocialPost}
-                initial={{ opacity: 0, x: 100, scale: 0.9 }}
-                animate={{ 
-                  opacity: showSocialPost ? 1 : 0, 
-                  x: showSocialPost ? 0 : -100,
-                  scale: showSocialPost ? 1 : 0.9
-                }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-black/90 border border-white/20 rounded-sm p-4 max-w-md shadow-2xl backdrop-blur-sm"
-              >
-                <div className="flex items-start gap-3">
-                  {SOCIAL_POSTS[currentSocialPost].avatar ? (
-                    <img 
-                      src={SOCIAL_POSTS[currentSocialPost].avatar} 
-                      alt={SOCIAL_POSTS[currentSocialPost].name}
-                      className="w-10 h-10 rounded-full object-cover shrink-0"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary shrink-0">
-                      {SOCIAL_POSTS[currentSocialPost].name.charAt(0)}
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1 flex-wrap">
-                      <span className="text-white text-xs font-medium">{SOCIAL_POSTS[currentSocialPost].name}</span>
-                      {SOCIAL_POSTS[currentSocialPost].verified && (
-                        <svg className="w-3.5 h-3.5 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/>
-                        </svg>
-                      )}
-                      <span className="text-muted-foreground text-[10px]">{SOCIAL_POSTS[currentSocialPost].handle}</span>
-                      <span className="text-muted-foreground text-[10px]">· {SOCIAL_POSTS[currentSocialPost].date}</span>
-                    </div>
-                    <p className="text-white/80 text-xs font-mono mt-1 leading-relaxed">
-                      {SOCIAL_POSTS[currentSocialPost].content}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>
