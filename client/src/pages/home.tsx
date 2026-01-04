@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { Search, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ShoppingBag, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
-
-import { Link } from "wouter";
 
 export default function Home() {
   return (
@@ -27,7 +25,7 @@ export default function Home() {
           className="flex items-center gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/80"
         >
           <a href="#about" className="hover:text-white transition-colors">About</a>
-          <Link href="/blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</Link>
+          <a href="#blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</a>
           <div className="flex gap-6 text-white ml-4">
             <ShoppingBag size={18} strokeWidth={1} />
             <Search size={18} strokeWidth={1} />
@@ -195,6 +193,128 @@ export default function Home() {
           </motion.div>
         </div>
         </section>
+
+        {/* Section: Blueprint */}
+        <section id="blueprint" className="min-h-screen w-full grid grid-cols-12 relative snap-start pt-24 pb-32">
+        
+        {/* Left Sidebar - Socials */}
+        <div className="col-span-2 relative flex flex-col justify-end pb-12 pl-12">
+          {/* Circle Indicator */}
+          <motion.div 
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="absolute bottom-24 left-12 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
+          >
+            <div className="w-1.5 h-1.5 bg-white rounded-full" />
+          </motion.div>
+        </div>
+
+        {/* Center - Content */}
+        <div className="col-span-8 relative flex flex-col items-center justify-center pt-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl w-full flex flex-col gap-8 h-full"
+          >
+            {/* Header */}
+            <div className="flex flex-col gap-4 border-b border-white/10 pb-8 text-center items-center">
+              <span className="text-xs uppercase tracking-[0.2em] text-primary">Resource</span>
+              <h1 className="font-display uppercase text-3xl md:text-5xl tracking-widest text-white">
+                Context Mapping<br/>Blueprint
+              </h1>
+              <p className="text-sm text-muted-foreground font-mono max-w-xl">
+                A practical guide to mapping customer context and uncovering the hidden drivers behind user behavior.
+              </p>
+            </div>
+
+            {/* PDF Preview / Download Section */}
+            <div className="flex-1 w-full flex flex-col items-center justify-center gap-6">
+              <div className="flex-1 w-full bg-black/40 border border-white/10 rounded-sm relative overflow-hidden group">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-black to-black" />
+                
+                {/* Center Content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+                  <motion.div 
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="w-full h-full max-w-5xl bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
+                  >
+                    <img 
+                      src="/blueprint-preview.png" 
+                      alt="Context Mapping Blueprint Preview" 
+                      className="w-full h-full object-contain"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Download Button - Below Image */}
+              <div className="flex flex-col items-center justify-center z-10">
+                  <motion.a 
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                  >
+                      <Download size={16} />
+                      View & Download Blueprint
+                  </motion.a>
+                  
+                  <p className="text-[10px] text-muted-foreground/80 mt-4 max-w-sm drop-shadow-md text-center">
+                      Redirects to GitHub to view and download the full high-resolution PDF file.
+                  </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Sidebar - Pagination & Controls */}
+        <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
+          
+          {/* Pagination */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="flex flex-col items-center gap-4 text-xs font-mono text-muted-foreground/50 absolute top-1/2 -translate-y-1/2 right-12"
+          >
+            <span>03</span>
+            <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
+               <motion.div 
+                 initial={{ height: 0 }}
+                 whileInView={{ height: "30%" }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 1.5, delay: 1 }}
+                 className="w-full bg-white absolute top-0"
+               />
+            </div>
+            <span>05</span>
+          </motion.div>
+
+          {/* Navigation Arrows */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="absolute bottom-24 right-12 flex gap-8 text-white/50"
+          >
+            <ChevronLeft className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
+            <ChevronRight className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
+          </motion.div>
+        </div>
+        </section>
+
       </div>
 
       {/* Footer Info */}
