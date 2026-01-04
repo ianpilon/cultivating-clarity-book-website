@@ -292,18 +292,13 @@ export default function Home() {
                   <motion.a 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/Customer_Context_Map.pdf"
+                      download="Customer_Context_Map.pdf"
                       className="px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
                   >
                       <Download size={16} />
-                      View & Download Blueprint
+                      Download Blueprint
                   </motion.a>
-                  
-                  <p className="text-[10px] text-muted-foreground/80 mt-4 max-w-sm drop-shadow-md text-center">
-                      Redirects to GitHub to view and download the full high-resolution PDF file.
-                  </p>
               </div>
             </div>
           </motion.div>
