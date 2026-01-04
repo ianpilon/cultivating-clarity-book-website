@@ -14,6 +14,7 @@ export default function Home() {
             if (entry.target.id === "video") setActiveSection(1);
             if (entry.target.id === "about") setActiveSection(2);
             if (entry.target.id === "blueprint") setActiveSection(3);
+            if (entry.target.id === "buy") setActiveSection(4);
           }
         });
       },
@@ -73,12 +74,12 @@ export default function Home() {
           </motion.span>
           <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden rounded-full">
              <motion.div 
-               animate={{ height: `${(activeSection / 3) * 100}%` }}
+               animate={{ height: `${(activeSection / 4) * 100}%` }}
                transition={{ duration: 0.8, ease: "easeInOut" }}
                className="w-full bg-primary absolute top-0"
              />
           </div>
-          <span>03</span>
+          <span>04</span>
         </motion.div>
       </div>
 
@@ -356,6 +357,64 @@ export default function Home() {
         </div>
 
         {/* Right Sidebar - Pagination & Controls */}
+        <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
+        </div>
+        </section>
+
+        {/* Section: Buy a Copy */}
+        <section id="buy" className="min-h-screen w-full grid grid-cols-12 relative snap-start pt-24 pb-32">
+        
+        {/* Left Sidebar */}
+        <div className="col-span-2 relative flex flex-col justify-end pb-12 pl-12">
+        </div>
+
+        {/* Center - Content */}
+        <div className="col-span-8 relative flex flex-col items-center justify-center pt-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl w-full flex flex-col gap-8 h-full items-center"
+          >
+            {/* Header */}
+            <div className="flex flex-col gap-4 border-b border-white/10 pb-8 text-center items-center">
+              <span className="text-xs uppercase tracking-[0.2em] text-primary">Get Your Copy</span>
+              <h1 className="font-display uppercase text-3xl md:text-5xl tracking-widest text-white">
+                Buy the Book
+              </h1>
+              <p className="text-sm text-muted-foreground font-mono max-w-xl">
+                Available now on Amazon in paperback format.
+              </p>
+            </div>
+
+            {/* Amazon Links */}
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.amazon.ca/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+              >
+                Buy on Amazon Canada
+              </motion.a>
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.amazon.com/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+              >
+                Buy on Amazon USA
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Sidebar */}
         <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
         </div>
         </section>
