@@ -69,27 +69,33 @@ const SOCIAL_POSTS = [
     content: "I'd like a copy too. Thanks",
     verified: false,
     avatar: "https://pbs.twimg.com/profile_images/1993834017091637248/xq0WCa4D_400x400.jpg"
-  }
-];
-
-const TESTIMONIALS = [
-  {
-    quote: "A great read for emphasizing Contextual Intelligence as key to aligning Physical AI solutions with human needs. Empathy for users' daily struggles to design products that seamlessly integrates with their workflows and addresses real pain points.",
-    author: "Jasmeet Singh",
-    role: "⭐⭐⭐⭐⭐ Reviewed in Canada",
-    avatar: "JS"
   },
   {
-    quote: "Cultivating Clarity helped me reframe 'context' from something static into something dynamic — a living system of motivations, constraints, and emotions that shape decisions. Ian Pilon's take on contextual intelligence is both insightful and practical.",
-    author: "Stefano Leone",
-    role: "⭐⭐⭐⭐⭐ Reviewed in Germany",
-    avatar: "SL"
+    name: "Jasmeet Singh",
+    handle: "⭐⭐⭐⭐⭐ Amazon Canada",
+    date: "Nov 7, 2024",
+    content: "A great read for emphasizing Contextual Intelligence as key to aligning Physical AI solutions with human needs.",
+    verified: false,
+    avatar: null,
+    isAmazonReview: true
   },
   {
-    quote: "Ian's mode of thinking and communicating is both inspiring and contagious. His deep curiosity encourages readers to explore, challenge, and learn in new ways. The interviews with Bob Moesta and Ori Freiman offer unique perspectives.",
-    author: "O",
-    role: "⭐⭐⭐⭐⭐ Reviewed in Netherlands",
-    avatar: "O"
+    name: "Stefano Leone",
+    handle: "⭐⭐⭐⭐⭐ Amazon Germany",
+    date: "Oct 24, 2025",
+    content: "Cultivating Clarity helped me reframe 'context' from something static into something dynamic — a living system of motivations, constraints, and emotions.",
+    verified: false,
+    avatar: null,
+    isAmazonReview: true
+  },
+  {
+    name: "O",
+    handle: "⭐⭐⭐⭐⭐ Amazon Netherlands",
+    date: "Jun 17, 2024",
+    content: "Ian's mode of thinking and communicating is both inspiring and contagious. His deep curiosity encourages readers to explore, challenge, and learn in new ways.",
+    verified: false,
+    avatar: null,
+    isAmazonReview: true
   }
 ];
 
@@ -659,47 +665,6 @@ export default function Home() {
                   </div>
                 </div>
               </motion.div>
-            </div>
-
-            {/* Testimonials Section */}
-            <div className="mt-8 w-full overflow-hidden">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-center mb-8"
-              >
-                <span className="text-xs uppercase tracking-[0.2em] text-primary">What Readers Say</span>
-                <h2 className="font-display uppercase text-xl md:text-2xl tracking-widest text-white mt-2">
-                  People Are Talking
-                </h2>
-              </motion.div>
-
-              {/* Auto-scrolling testimonials */}
-              <div className="relative -mx-8">
-                <div className="flex animate-scroll gap-6">
-                  {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
-                    <div 
-                      key={index}
-                      className="flex-shrink-0 w-72 bg-white/5 border border-white/10 p-5 rounded-sm"
-                    >
-                      <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
-                        "{testimonial.quote}"
-                      </p>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary">
-                          {testimonial.avatar}
-                        </div>
-                        <div>
-                          <p className="text-xs text-white font-mono">{testimonial.author}</p>
-                          <p className="text-[10px] text-muted-foreground">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
