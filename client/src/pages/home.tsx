@@ -28,7 +28,7 @@ const SOCIAL_POSTS = [
     date: "Jan 1",
     content: "Thanks in advance for a copy of the Book",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1572541237865123841/D1cURNml_400x400.jpg"
   }
 ];
 
