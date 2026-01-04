@@ -23,18 +23,6 @@ const TESTIMONIALS = [
     author: "O",
     role: "⭐⭐⭐⭐⭐ Reviewed in Netherlands",
     avatar: "O"
-  },
-  {
-    quote: "The Customer Context Map is a practical tool with actionable tips on how to leverage it effectively. This model is particularly beneficial for professionals aiming to challenge, refine, and validate their thinking.",
-    author: "O",
-    role: "⭐⭐⭐⭐⭐ Verified Purchase",
-    avatar: "O"
-  },
-  {
-    quote: "It made me want to dive deeper into the Jobs to Be Done and Information Foraging frameworks he connects so elegantly throughout the book. A must-read for Product Managers.",
-    author: "Stefano Leone",
-    role: "⭐⭐⭐⭐⭐ Verified Purchase",
-    avatar: "SL"
   }
 ];
 
