@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Search, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
-// import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
+import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
 
 export default function Home() {
   return (
@@ -77,6 +77,7 @@ export default function Home() {
               src="/ianTBhat.jpg" 
               alt="Ian T Bhat" 
               className="w-full h-full object-cover"
+              onError={(e) => e.currentTarget.src = heroImage}
             />
             
             {/* Gold Frame Overlay */}
