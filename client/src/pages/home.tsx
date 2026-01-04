@@ -60,7 +60,7 @@ const SOCIAL_POSTS = [
     date: "Dec 31, 2025",
     content: "I'd be interested in reading it, thank you.",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1921985068324564992/9S3Zs9J4_400x400.jpg"
   },
   {
     name: "Haba(rosso)nero",
