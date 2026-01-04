@@ -165,7 +165,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <div className="space-y-4 text-xs md:text-sm text-muted-foreground font-mono leading-relaxed h-[70vh] overflow-y-auto pr-4 scrollbar-hide">
+            <div className="space-y-4 text-xs md:text-sm text-muted-foreground font-mono leading-relaxed h-[45vh] overflow-y-auto pr-4 scrollbar-hide relative">
               <p>
                 In an age where AI can generate solutions in seconds, the real competitive advantage isn't speed—it's understanding what problems actually matter. As AI commoditizes execution, the ability to deeply understand customer context becomes the only sustainable differentiator.
               </p>
