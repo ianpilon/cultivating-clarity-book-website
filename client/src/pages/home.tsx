@@ -601,7 +601,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3 min-w-[280px] justify-between"
+                  className="px-8 py-4 bg-transparent border-2 border-primary text-white font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3 min-w-[280px] justify-between"
                   data-testid="country-selector-button"
                 >
                   <span>
