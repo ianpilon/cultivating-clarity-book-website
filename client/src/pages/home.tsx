@@ -298,37 +298,6 @@ export default function Home() {
 
         {/* Right Sidebar - Pagination & Controls */}
         <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
-          
-          {/* Pagination */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="flex flex-col items-center gap-4 text-xs font-mono text-muted-foreground/50 absolute top-1/2 -translate-y-1/2 right-12"
-          >
-            <span>03</span>
-            <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
-               <motion.div 
-                 initial={{ height: 0 }}
-                 whileInView={{ height: "30%" }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1.5, delay: 1 }}
-                 className="w-full bg-white absolute top-0"
-               />
-            </div>
-            <span>05</span>
-          </motion.div>
-
-          {/* Navigation Arrows */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute bottom-24 right-12 flex gap-8 text-white/50"
-          >
-          </motion.div>
         </div>
         </section>
 
@@ -412,37 +381,6 @@ export default function Home() {
 
         {/* Right Sidebar - Pagination & Controls */}
         <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
-          
-          {/* Pagination */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="flex flex-col items-center gap-4 text-xs font-mono text-muted-foreground/50 absolute top-1/2 -translate-y-1/2 right-12"
-          >
-            <span>04</span>
-            <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
-               <motion.div 
-                 initial={{ height: 0 }}
-                 whileInView={{ height: "30%" }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1.5, delay: 1 }}
-                 className="w-full bg-white absolute top-0"
-               />
-            </div>
-            <span>05</span>
-          </motion.div>
-
-          {/* Navigation Arrows */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="absolute bottom-24 right-12 flex gap-8 text-white/50"
-          >
-          </motion.div>
         </div>
         </section>
 
