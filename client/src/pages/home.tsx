@@ -68,7 +68,7 @@ const SOCIAL_POSTS = [
     date: "Jan 1",
     content: "I'd like a copy too. Thanks",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1993834017091637248/xq0WCa4D_400x400.jpg"
   }
 ];
 
