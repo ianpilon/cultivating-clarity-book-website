@@ -194,12 +194,12 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-[30vh] h-[45vh] shadow-2xl rotate-[-5deg]"
+              className="w-[45vh] h-[65vh] shadow-xl"
             >
               <img 
                 src="/bookCoverV3.png" 
                 alt="Cultivating Clarity Book Cover" 
-                className="w-full h-full object-cover rounded-sm"
+                className="w-full h-full object-cover"
               />
             </motion.div>
 
