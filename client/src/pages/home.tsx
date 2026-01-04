@@ -24,9 +24,8 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex items-center gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/80"
         >
-          <a href="#" className="hover:text-white transition-colors">About</a>
-          <a href="#" className="hover:text-white transition-colors">Sponsors</a>
-          <a href="#" className="hover:text-white transition-colors">Magazine</a>
+          <a href="#" className="hover:text-white transition-colors">Cultivating Clarity</a>
+          <a href="#" className="hover:text-white transition-colors">Author</a>
           <a href="#" className="hover:text-white transition-colors">Contact</a>
           <div className="flex gap-6 text-white ml-4">
             <ShoppingBag size={18} strokeWidth={1} />
