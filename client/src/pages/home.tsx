@@ -53,17 +53,6 @@ export default function Home() {
               <span className="text-vertical hover:text-white transition-colors cursor-pointer whitespace-nowrap">Twitter</span>
             </div>
           </motion.div>
-
-          {/* Circle Indicator */}
-          <motion.div 
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="absolute bottom-24 left-12 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
-          >
-            <div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
         </div>
 
         {/* Center - Content */}
@@ -71,34 +60,47 @@ export default function Home() {
           
           {/* Images Column */}
           <div className="flex shrink-0 items-start justify-center gap-12 relative z-20">
-            {/* Column 1: Book + Office */}
-            <div className="flex flex-col gap-12">
-              {/* Book Cover Image */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className="w-[25vh] h-[37.5vh] shadow-xl"
-              >
-                <img 
-                  src="/bookCoverV3.png" 
-                  alt="Cultivating Clarity Book Cover" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+            {/* Column 1: Book + Office + Circle */}
+            <div className="flex flex-col gap-12 h-full justify-between min-h-[60vh]">
+              <div className="flex flex-col gap-12">
+                {/* Book Cover Image */}
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="w-[25vh] h-[37.5vh] shadow-xl"
+                >
+                  <img 
+                    src="/bookCoverV3.png" 
+                    alt="Cultivating Clarity Book Cover" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
 
-              {/* Office Info */}
+                {/* Office Info */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
+                >
+                  <h3 className="text-white mb-2">Office</h3>
+                  <p>165 King St W</p>
+                  <p>Kitchener, ON N2G 1A7</p>
+                </motion.div>
+              </div>
+              
+              {/* Circle Indicator */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
+                transition={{ duration: 1, delay: 0.8 }}
+                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
               >
-                <h3 className="text-white mb-2">Office</h3>
-                <p>165 King St W</p>
-                <p>Kitchener, ON N2G 1A7</p>
+                <div className="w-1.5 h-1.5 bg-white rounded-full" />
               </motion.div>
             </div>
 
@@ -162,7 +164,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <div className="space-y-4 text-xs md:text-sm text-muted-foreground font-mono leading-relaxed h-[50vh] overflow-y-auto pr-4 scrollbar-hide">
+            <div className="space-y-4 text-xs md:text-sm text-muted-foreground font-mono leading-relaxed h-[70vh] overflow-y-auto pr-4 scrollbar-hide">
               <p>
                 In an age where AI can generate solutions in seconds, the real competitive advantage isn't speed—it's understanding what problems actually matter. As AI commoditizes execution, the ability to deeply understand customer context becomes the only sustainable differentiator.
               </p>
