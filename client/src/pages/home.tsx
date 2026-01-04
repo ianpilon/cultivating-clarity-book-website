@@ -85,7 +85,7 @@ export default function Home() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "60%" }}
               transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-              className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-[#f5451a] z-20"
+              className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-primary z-20"
             />
           </motion.div>
 
