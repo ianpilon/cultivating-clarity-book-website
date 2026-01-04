@@ -5,6 +5,39 @@ import { useEffect, useState } from "react";
 
 const BOOK_ASIN = "B0D477YKPZ";
 
+const TESTIMONIALS = [
+  {
+    quote: "This book completely changed how I approach customer research. The contextual intelligence framework is pure gold.",
+    author: "Sarah M.",
+    role: "Product Manager, Tech Startup",
+    avatar: "SM"
+  },
+  {
+    quote: "Finally, a practical guide that bridges the gap between data and genuine customer understanding. Essential reading for any UX professional.",
+    author: "James L.",
+    role: "UX Director, Enterprise",
+    avatar: "JL"
+  },
+  {
+    quote: "The interviews with industry experts alone are worth the price. Ian synthesizes complex ideas into actionable frameworks.",
+    author: "Dr. Elena R.",
+    role: "Innovation Lead, Fortune 500",
+    avatar: "ER"
+  },
+  {
+    quote: "As someone drowning in analytics but starving for insight, this book was exactly what I needed. Highly recommend!",
+    author: "Michael T.",
+    role: "Head of Product, SaaS",
+    avatar: "MT"
+  },
+  {
+    quote: "Cultivating Clarity helped our team move from feature factories to truly understanding what our customers need. Game changer.",
+    author: "Amanda K.",
+    role: "VP of Experience, Fintech",
+    avatar: "AK"
+  }
+];
+
 const AMAZON_COUNTRIES = [
   { code: "AU", name: "Australia", flag: "🇦🇺", domain: "amazon.com.au" },
   { code: "BE", name: "Belgium", flag: "🇧🇪", domain: "amazon.com.be" },
@@ -515,6 +548,47 @@ export default function Home() {
         </div>
         </section>
 
+      </div>
+
+      {/* Testimonials Footer */}
+      <div className="w-full py-16 border-t border-white/10 overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <span className="text-xs uppercase tracking-[0.2em] text-primary">What Readers Say</span>
+          <h2 className="font-display uppercase text-2xl md:text-3xl tracking-widest text-white mt-2">
+            People Are Talking
+          </h2>
+        </motion.div>
+
+        {/* Auto-scrolling testimonials */}
+        <div className="relative">
+          <div className="flex animate-scroll gap-6">
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+              <div 
+                key={index}
+                className="flex-shrink-0 w-80 bg-white/5 border border-white/10 p-6 rounded-sm"
+              >
+                <p className="text-sm text-muted-foreground font-mono leading-relaxed mb-6">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="text-sm text-white font-mono">{testimonial.author}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
     </div>
