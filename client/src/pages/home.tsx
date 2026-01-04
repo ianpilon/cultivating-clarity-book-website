@@ -11,21 +11,24 @@ const SOCIAL_POSTS = [
     handle: "@rileyngg",
     date: "Nov 30, 2025",
     content: "loved reading this. going deeper with customer feedback is essential for product development.",
-    verified: true
+    verified: true,
+    avatar: "https://pbs.twimg.com/profile_images/1973783136224894976/CrhyB_fX_400x400.jpg"
   },
   {
     name: "BTC_C_The_Light",
     handle: "@BTC_C_The_Light",
     date: "Dec 31, 2025",
     content: "Would love a copy. many thanks.",
-    verified: false
+    verified: false,
+    avatar: null
   },
   {
     name: "John Huo",
     handle: "@stjohnhuo",
     date: "Jan 1",
     content: "Thanks in advance for a copy of the Book",
-    verified: false
+    verified: false,
+    avatar: null
   }
 ];
 
@@ -588,9 +591,17 @@ export default function Home() {
                 className="bg-black/90 border border-white/20 rounded-sm p-4 max-w-md shadow-2xl backdrop-blur-sm"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary shrink-0">
-                    {SOCIAL_POSTS[currentSocialPost].name.charAt(0)}
-                  </div>
+                  {SOCIAL_POSTS[currentSocialPost].avatar ? (
+                    <img 
+                      src={SOCIAL_POSTS[currentSocialPost].avatar} 
+                      alt={SOCIAL_POSTS[currentSocialPost].name}
+                      className="w-10 h-10 rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary shrink-0">
+                      {SOCIAL_POSTS[currentSocialPost].name.charAt(0)}
+                    </div>
+                  )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1 flex-wrap">
                       <span className="text-white text-xs font-medium">{SOCIAL_POSTS[currentSocialPost].name}</span>
