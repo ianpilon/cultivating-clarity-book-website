@@ -97,8 +97,8 @@ export default function Home() {
                 className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
               >
                 <h3 className="text-white mb-2">Office</h3>
-                <p>Sandekra 240</p>
-                <p>1396 Billingstad</p>
+                <p>165 King St W</p>
+                <p>Kitchener, ON N2G 1A7</p>
               </motion.div>
             </div>
 
@@ -141,8 +141,8 @@ export default function Home() {
                 className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
               >
                 <h3 className="text-white mb-2">Get in Touch</h3>
-                <p>T. +0085 3456 2188</p>
-                <p className="hover:text-primary transition-colors cursor-pointer">E. info@baygulov.com</p>
+                <p>T. 519 277 0970</p>
+                <p className="hover:text-primary transition-colors cursor-pointer">E. ianpilon@gmail.com</p>
               </motion.div>
             </div>
           </div>
