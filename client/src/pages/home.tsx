@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Search, ShoppingBag, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
+import { Tweet } from 'react-tweet';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         >
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</a>
+          <a href="#video" className="hover:text-white transition-colors">Video</a>
           <div className="flex gap-6 text-white ml-4">
             <ShoppingBag size={18} strokeWidth={1} />
             <Search size={18} strokeWidth={1} />
@@ -318,6 +320,87 @@ export default function Home() {
             className="flex flex-col items-center gap-4 text-xs font-mono text-muted-foreground/50 absolute top-1/2 -translate-y-1/2 right-12"
           >
             <span>03</span>
+            <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
+               <motion.div 
+                 initial={{ height: 0 }}
+                 whileInView={{ height: "30%" }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 1.5, delay: 1 }}
+                 className="w-full bg-white absolute top-0"
+               />
+            </div>
+            <span>05</span>
+          </motion.div>
+
+          {/* Navigation Arrows */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="absolute bottom-24 right-12 flex gap-8 text-white/50"
+          >
+            <ChevronLeft className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
+            <ChevronRight className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
+          </motion.div>
+        </div>
+        </section>
+
+        {/* Section: Video */}
+        <section id="video" className="min-h-screen w-full grid grid-cols-12 relative snap-start pt-24 pb-32">
+        
+        {/* Left Sidebar - Socials */}
+        <div className="col-span-2 relative flex flex-col justify-end pb-12 pl-12">
+          {/* Circle Indicator */}
+          <motion.div 
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="absolute bottom-24 left-12 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
+          >
+            <div className="w-1.5 h-1.5 bg-white rounded-full" />
+          </motion.div>
+        </div>
+
+        {/* Center - Content */}
+        <div className="col-span-8 relative flex flex-col items-center justify-center pt-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl w-full flex flex-col gap-8 h-full"
+          >
+            {/* Header */}
+            <div className="flex flex-col gap-4 border-b border-white/10 pb-8 text-center items-center">
+              <span className="text-xs uppercase tracking-[0.2em] text-primary">Media</span>
+              <h1 className="font-display uppercase text-3xl md:text-5xl tracking-widest text-white">
+                Featured<br/>Video
+              </h1>
+            </div>
+
+            {/* Video Embed Section */}
+            <div className="flex-1 w-full flex flex-col items-center justify-center">
+              <div className="w-full max-w-xl" data-theme="dark">
+                <Tweet id="1869044205751107637" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Sidebar - Pagination & Controls */}
+        <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
+          
+          {/* Pagination */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.7 }}
+            className="flex flex-col items-center gap-4 text-xs font-mono text-muted-foreground/50 absolute top-1/2 -translate-y-1/2 right-12"
+          >
+            <span>04</span>
             <div className="w-[1px] h-24 bg-white/10 relative overflow-hidden">
                <motion.div 
                  initial={{ height: 0 }}
