@@ -1,8 +1,31 @@
 import { motion } from "framer-motion";
 import { Search, ShoppingBag, ChevronLeft, ChevronRight, Download } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState(1);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.id === "video") setActiveSection(1);
+            if (entry.target.id === "about") setActiveSection(2);
+            if (entry.target.id === "blueprint") setActiveSection(3);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black overflow-hidden relative">
       {/* Noise overlay handled in global CSS */}
@@ -10,12 +33,13 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 p-8 flex justify-between items-center z-50">
         <motion.div 
+          key={activeSection}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-2xl font-display font-light tracking-widest"
         >
-          1/.
+          {activeSection}/.
         </motion.div>
 
         <motion.div 
@@ -120,8 +144,6 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="absolute bottom-24 right-12 flex gap-8 text-white/50"
           >
-            <ChevronLeft className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
-            <ChevronRight className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
           </motion.div>
         </div>
         </section>
@@ -310,8 +332,6 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="absolute bottom-24 right-12 flex gap-8 text-white/50"
           >
-            <ChevronLeft className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
-            <ChevronRight className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
           </motion.div>
         </div>
         </section>
@@ -426,8 +446,6 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="absolute bottom-24 right-12 flex gap-8 text-white/50"
           >
-            <ChevronLeft className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
-            <ChevronRight className="hover:text-white cursor-pointer transition-colors" size={20} strokeWidth={1} />
           </motion.div>
         </div>
         </section>
