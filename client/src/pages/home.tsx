@@ -74,7 +74,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full h-full grayscale contrast-125 brightness-90"
+              className="w-full h-full"
             >
               <img 
                 src="/bookCoverV2.png" 
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
 
           {/* Typography Overlay */}
-          <div className="absolute bottom-[15%] left-4 md:left-8 lg:left-12 z-30 pointer-events-none w-full">
+          {/* <div className="absolute bottom-[15%] left-4 md:left-8 lg:left-12 z-30 pointer-events-none w-full">
             <motion.h1 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -116,7 +116,7 @@ export default function Home() {
             >
               The art of discerning what matters using <span className="text-white font-normal underline decoration-primary decoration-1 underline-offset-4">contextual intelligence</span>
             </motion.p>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Sidebar - Pagination & Controls */}
