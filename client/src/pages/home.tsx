@@ -1,10 +1,54 @@
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, ChevronDown } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
 import { useEffect, useState } from "react";
 
+const BOOK_ASIN = "B0D477YKPZ";
+
+const AMAZON_COUNTRIES = [
+  { code: "AU", name: "Australia", flag: "🇦🇺", domain: "amazon.com.au" },
+  { code: "BE", name: "Belgium", flag: "🇧🇪", domain: "amazon.com.be" },
+  { code: "BR", name: "Brazil", flag: "🇧🇷", domain: "amazon.com.br" },
+  { code: "CA", name: "Canada", flag: "🇨🇦", domain: "amazon.ca" },
+  { code: "CN", name: "China", flag: "🇨🇳", domain: "amazon.cn" },
+  { code: "EG", name: "Egypt", flag: "🇪🇬", domain: "amazon.eg" },
+  { code: "FR", name: "France", flag: "🇫🇷", domain: "amazon.fr" },
+  { code: "DE", name: "Germany", flag: "🇩🇪", domain: "amazon.de" },
+  { code: "IN", name: "India", flag: "🇮🇳", domain: "amazon.in" },
+  { code: "IE", name: "Ireland", flag: "🇮🇪", domain: "amazon.ie" },
+  { code: "IT", name: "Italy", flag: "🇮🇹", domain: "amazon.it" },
+  { code: "JP", name: "Japan", flag: "🇯🇵", domain: "amazon.co.jp" },
+  { code: "MX", name: "Mexico", flag: "🇲🇽", domain: "amazon.com.mx" },
+  { code: "NL", name: "Netherlands", flag: "🇳🇱", domain: "amazon.nl" },
+  { code: "PL", name: "Poland", flag: "🇵🇱", domain: "amazon.pl" },
+  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦", domain: "amazon.sa" },
+  { code: "SG", name: "Singapore", flag: "🇸🇬", domain: "amazon.sg" },
+  { code: "ZA", name: "South Africa", flag: "🇿🇦", domain: "amazon.co.za" },
+  { code: "ES", name: "Spain", flag: "🇪🇸", domain: "amazon.es" },
+  { code: "SE", name: "Sweden", flag: "🇸🇪", domain: "amazon.se" },
+  { code: "TR", name: "Turkey", flag: "🇹🇷", domain: "amazon.com.tr" },
+  { code: "AE", name: "United Arab Emirates", flag: "🇦🇪", domain: "amazon.ae" },
+  { code: "GB", name: "United Kingdom", flag: "🇬🇧", domain: "amazon.co.uk" },
+  { code: "US", name: "United States", flag: "🇺🇸", domain: "amazon.com" },
+];
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState(1);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const getAmazonUrl = (domain: string) => {
+    return `https://www.${domain}/dp/${BOOK_ASIN}`;
+  };
+
+  const handleCountrySelect = (countryCode: string) => {
+    setSelectedCountry(countryCode);
+    setIsDropdownOpen(false);
+    const country = AMAZON_COUNTRIES.find(c => c.code === countryCode);
+    if (country) {
+      window.open(getAmazonUrl(country.domain), "_blank");
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -393,7 +437,7 @@ export default function Home() {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.amazon.ca/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                href={getAmazonUrl("amazon.ca")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
@@ -403,7 +447,7 @@ export default function Home() {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.amazon.com/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                href={getAmazonUrl("amazon.com")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
@@ -413,13 +457,55 @@ export default function Home() {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.amazon.de/-/en/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                href={getAmazonUrl("amazon.de")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
               >
                 🇩🇪 Buy on Amazon Germany
               </motion.a>
+            </div>
+
+            {/* Country Selector Dropdown */}
+            <div className="mt-8 flex flex-col items-center gap-4">
+              <p className="text-sm text-muted-foreground font-mono">
+                Not in one of these countries? Select yours below:
+              </p>
+              <div className="relative">
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="px-6 py-3 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest hover:bg-white/20 transition-colors flex items-center gap-3 min-w-[280px] justify-between"
+                  data-testid="country-selector-button"
+                >
+                  <span>
+                    {selectedCountry 
+                      ? `${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.flag} ${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.name}`
+                      : "Select Your Country"
+                    }
+                  </span>
+                  <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isDropdownOpen && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-white/20 max-h-64 overflow-y-auto z-50 shadow-2xl"
+                  >
+                    {AMAZON_COUNTRIES.map((country) => (
+                      <button
+                        key={country.code}
+                        onClick={() => handleCountrySelect(country.code)}
+                        className="w-full px-4 py-3 text-left text-white font-mono text-xs hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
+                        data-testid={`country-option-${country.code}`}
+                      >
+                        <span className="text-lg">{country.flag}</span>
+                        <span>{country.name}</span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
