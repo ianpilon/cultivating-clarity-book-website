@@ -76,7 +76,7 @@ const SOCIAL_POSTS = [
     date: "Nov 7, 2024",
     content: "A great read for emphasizing Contextual Intelligence as key to aligning Physical AI solutions with human needs.",
     verified: false,
-    avatar: null,
+    avatar: "https://media.licdn.com/dms/image/v2/D5603AQEWUx-arGoz-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693939683480?e=1769040000&v=beta&t=7bx8UdMuDaXi73mqw3oWd0Lmk91FL-gdpIKp5XpNg9I",
     isAmazonReview: true
   },
   {
