@@ -7,34 +7,34 @@ const BOOK_ASIN = "B0D477YKPZ";
 
 const TESTIMONIALS = [
   {
-    quote: "This book completely changed how I approach customer research. The contextual intelligence framework is pure gold.",
-    author: "Sarah M.",
-    role: "Product Manager, Tech Startup",
-    avatar: "SM"
+    quote: "A great read for emphasizing Contextual Intelligence as key to aligning Physical AI solutions with human needs. Empathy for users' daily struggles to design products that seamlessly integrates with their workflows and addresses real pain points.",
+    author: "Jasmeet Singh",
+    role: "⭐⭐⭐⭐⭐ Reviewed in Canada",
+    avatar: "JS"
   },
   {
-    quote: "Finally, a practical guide that bridges the gap between data and genuine customer understanding. Essential reading for any UX professional.",
-    author: "James L.",
-    role: "UX Director, Enterprise",
-    avatar: "JL"
+    quote: "Cultivating Clarity helped me reframe 'context' from something static into something dynamic — a living system of motivations, constraints, and emotions that shape decisions. Ian Pilon's take on contextual intelligence is both insightful and practical.",
+    author: "Stefano Leone",
+    role: "⭐⭐⭐⭐⭐ Reviewed in Germany",
+    avatar: "SL"
   },
   {
-    quote: "The interviews with industry experts alone are worth the price. Ian synthesizes complex ideas into actionable frameworks.",
-    author: "Dr. Elena R.",
-    role: "Innovation Lead, Fortune 500",
-    avatar: "ER"
+    quote: "Ian's mode of thinking and communicating is both inspiring and contagious. His deep curiosity encourages readers to explore, challenge, and learn in new ways. The interviews with Bob Moesta and Ori Freiman offer unique perspectives.",
+    author: "O",
+    role: "⭐⭐⭐⭐⭐ Reviewed in Netherlands",
+    avatar: "O"
   },
   {
-    quote: "As someone drowning in analytics but starving for insight, this book was exactly what I needed. Highly recommend!",
-    author: "Michael T.",
-    role: "Head of Product, SaaS",
-    avatar: "MT"
+    quote: "The Customer Context Map is a practical tool with actionable tips on how to leverage it effectively. This model is particularly beneficial for professionals aiming to challenge, refine, and validate their thinking.",
+    author: "O",
+    role: "⭐⭐⭐⭐⭐ Verified Purchase",
+    avatar: "O"
   },
   {
-    quote: "Cultivating Clarity helped our team move from feature factories to truly understanding what our customers need. Game changer.",
-    author: "Amanda K.",
-    role: "VP of Experience, Fintech",
-    avatar: "AK"
+    quote: "It made me want to dive deeper into the Jobs to Be Done and Information Foraging frameworks he connects so elegantly throughout the book. A must-read for Product Managers.",
+    author: "Stefano Leone",
+    role: "⭐⭐⭐⭐⭐ Verified Purchase",
+    avatar: "SL"
   }
 ];
 
