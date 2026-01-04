@@ -595,49 +595,35 @@ export default function Home() {
               >
                 🇺🇸 Buy on Amazon USA
               </motion.a>
-              <motion.a 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={getAmazonUrl("amazon.de")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
-              >
-                🇩🇪 Buy on Amazon Germany
-              </motion.a>
-            </div>
-
-            {/* Country Selector Dropdown */}
-            <div className="mt-8 flex flex-col items-center gap-4">
-              <p className="text-sm text-muted-foreground font-mono">
-                Not in one of these countries? Select yours below:
-              </p>
+              {/* Country Selector Dropdown - styled as button */}
               <div className="relative">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="px-6 py-3 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest hover:bg-white/20 transition-colors flex items-center gap-3 min-w-[280px] justify-between"
+                  className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3 min-w-[280px] justify-between"
                   data-testid="country-selector-button"
                 >
                   <span>
                     {selectedCountry 
                       ? `${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.flag} ${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.name}`
-                      : "Select Your Country"
+                      : "🌍 Other Countries"
                     }
                   </span>
                   <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </motion.button>
                 
                 {isDropdownOpen && (
                   <motion.div 
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-white/20 max-h-64 overflow-y-auto z-50 shadow-2xl"
+                    className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-primary max-h-64 overflow-y-auto z-50 shadow-2xl"
                   >
                     {AMAZON_COUNTRIES.map((country) => (
                       <button
                         key={country.code}
                         onClick={() => handleCountrySelect(country.code)}
-                        className="w-full px-4 py-3 text-left text-white font-mono text-xs hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
+                        className="w-full px-4 py-3 text-left text-primary font-mono text-xs hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
                         data-testid={`country-option-${country.code}`}
                       >
                         <span className="text-lg">{country.flag}</span>
