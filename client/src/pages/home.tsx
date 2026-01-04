@@ -66,28 +66,31 @@ export default function Home() {
         {/* Center - Image & Title */}
         <div className="col-span-8 relative flex items-center justify-center">
           
-          {/* Main Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-[45vh] h-[65vh] grayscale contrast-125 brightness-90"
-          >
-            <img 
-              src="/ianTBhat.jpg" 
-              alt="Ian T Bhat" 
-              className="w-full h-full object-cover"
-              onError={(e) => e.currentTarget.src = heroImage}
-            />
+          {/* Main Image Wrapper */}
+          <div className="relative w-[45vh] h-[65vh]">
+            {/* Image with Grayscale */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="w-full h-full grayscale contrast-125 brightness-90"
+            >
+              <img 
+                src="/ianTBhat.jpg" 
+                alt="Ian T Bhat" 
+                className="w-full h-full object-cover"
+                onError={(e) => e.currentTarget.src = heroImage}
+              />
+            </motion.div>
             
-            {/* Gold Frame Overlay */}
+            {/* Orange Frame Overlay - Outside Grayscale */}
             <motion.div 
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "60%" }}
               transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-              className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-[color:var(--color-primary)] z-20"
+              className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-primary z-20"
             />
-          </motion.div>
+          </div>
 
           {/* Typography Overlay */}
           <div className="absolute bottom-[15%] left-4 md:left-8 lg:left-12 z-30 pointer-events-none w-full">
