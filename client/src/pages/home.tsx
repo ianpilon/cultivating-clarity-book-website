@@ -20,7 +20,7 @@ const SOCIAL_POSTS = [
     date: "Dec 31, 2025",
     content: "Would love a copy. many thanks.",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1475926990926581764/iPaamI89_400x400.jpg"
   },
   {
     name: "John Huo",
