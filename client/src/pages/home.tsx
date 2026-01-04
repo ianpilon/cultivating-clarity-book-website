@@ -52,7 +52,7 @@ const SOCIAL_POSTS = [
     date: "Dec 31, 2025",
     content: "I'd love to read it",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1477497745439084549/KMkbEGaH_400x400.jpg"
   },
   {
     name: "Steve Peterson",
