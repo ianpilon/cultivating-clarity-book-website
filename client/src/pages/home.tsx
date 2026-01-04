@@ -428,7 +428,7 @@ export default function Home() {
                 Buy the Book
               </h1>
               <p className="text-sm text-muted-foreground font-mono max-w-xl">
-                Available now on Amazon in paperback format.
+                Available now on Amazon in paperback format and Kindle.
               </p>
             </div>
 
