@@ -540,6 +540,47 @@ export default function Home() {
                 )}
               </div>
             </div>
+
+            {/* Testimonials Section */}
+            <div className="mt-16 w-full overflow-hidden">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-8"
+              >
+                <span className="text-xs uppercase tracking-[0.2em] text-primary">What Readers Say</span>
+                <h2 className="font-display uppercase text-xl md:text-2xl tracking-widest text-white mt-2">
+                  People Are Talking
+                </h2>
+              </motion.div>
+
+              {/* Auto-scrolling testimonials */}
+              <div className="relative -mx-8">
+                <div className="flex animate-scroll gap-6">
+                  {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+                    <div 
+                      key={index}
+                      className="flex-shrink-0 w-72 bg-white/5 border border-white/10 p-5 rounded-sm"
+                    >
+                      <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary">
+                          {testimonial.avatar}
+                        </div>
+                        <div>
+                          <p className="text-xs text-white font-mono">{testimonial.author}</p>
+                          <p className="text-[10px] text-muted-foreground">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -548,47 +589,6 @@ export default function Home() {
         </div>
         </section>
 
-      </div>
-
-      {/* Testimonials Footer */}
-      <div className="w-full py-16 border-t border-white/10 overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <span className="text-xs uppercase tracking-[0.2em] text-primary">What Readers Say</span>
-          <h2 className="font-display uppercase text-2xl md:text-3xl tracking-widest text-white mt-2">
-            People Are Talking
-          </h2>
-        </motion.div>
-
-        {/* Auto-scrolling testimonials */}
-        <div className="relative">
-          <div className="flex animate-scroll gap-6">
-            {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
-              <div 
-                key={index}
-                className="flex-shrink-0 w-80 bg-white/5 border border-white/10 p-6 rounded-sm"
-              >
-                <p className="text-sm text-muted-foreground font-mono leading-relaxed mb-6">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-xs font-mono text-primary">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <p className="text-sm text-white font-mono">{testimonial.author}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
     </div>
