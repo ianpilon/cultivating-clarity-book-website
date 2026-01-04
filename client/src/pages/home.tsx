@@ -77,8 +77,8 @@ export default function Home() {
               className="w-full h-full grayscale contrast-125 brightness-90"
             >
               <img 
-                src="/ianTBhat.jpg" 
-                alt="Ian T Bhat" 
+                src="/bookCover.jpg" 
+                alt="Cultivating Clarity Book Cover" 
                 className="w-full h-full object-cover"
                 onError={(e) => e.currentTarget.src = heroImage}
               />
