@@ -187,32 +187,49 @@ export default function Home() {
         {/* Center - Image & Title */}
         <div className="col-span-8 relative flex items-center justify-center">
           
-          {/* Main Image Wrapper */}
-          <div className="relative w-[45vh] h-[65vh]">
-            {/* Image with Grayscale */}
+          <div className="flex items-center justify-center gap-12 relative z-20">
+            {/* Book Cover Image */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full h-full grayscale contrast-125 brightness-90"
+              className="w-[30vh] h-[45vh] shadow-2xl rotate-[-5deg]"
             >
               <img 
-                src="/ianTBhat.jpg" 
-                alt="Ian T Bhat" 
-                className="w-full h-full object-cover"
-                onError={(e) => e.currentTarget.src = heroImage}
+                src="/bookCoverV3.png" 
+                alt="Cultivating Clarity Book Cover" 
+                className="w-full h-full object-cover rounded-sm"
               />
             </motion.div>
-            
-            {/* Orange Frame Overlay - Outside Grayscale */}
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }}
-              whileInView={{ opacity: 1, height: "60%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-              className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-primary z-20"
-            />
+
+            {/* Main Image Wrapper */}
+            <div className="relative w-[45vh] h-[65vh]">
+              {/* Image with Grayscale */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="w-full h-full grayscale contrast-125 brightness-90"
+              >
+                <img 
+                  src="/ianTBhat.jpg" 
+                  alt="Ian T Bhat" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => e.currentTarget.src = heroImage}
+                />
+              </motion.div>
+              
+              {/* Orange Frame Overlay - Outside Grayscale */}
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                whileInView={{ opacity: 1, height: "60%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+                className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-primary z-20"
+              />
+            </div>
           </div>
 
           {/* Typography Overlay */}
