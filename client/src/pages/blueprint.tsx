@@ -69,36 +69,34 @@ export default function Blueprint() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full max-w-2xl aspect-video bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
+                className="w-full h-full max-w-5xl bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
               >
                 <img 
                   src="/blueprint-preview.png" 
                   alt="Context Mapping Blueprint Preview" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Overlay Button */}
+                <div className="absolute bottom-12 left-0 right-0 flex flex-col items-center justify-center pointer-events-auto">
+                    <motion.a 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                    >
+                        <Download size={16} />
+                        View & Download Blueprint
+                    </motion.a>
+                    
+                    <p className="text-[10px] text-muted-foreground/80 mt-4 max-w-sm drop-shadow-md">
+                        Redirects to GitHub to view and download the full high-resolution PDF file.
+                    </p>
+                </div>
               </motion.div>
-
-              <div className="flex flex-col gap-2">
-                <h3 className="text-white font-display uppercase tracking-widest text-lg">Customer Context Map</h3>
-                <p className="text-xs text-muted-foreground font-mono">PDF Document</p>
-              </div>
-
-              <motion.a 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3"
-              >
-                <Download size={16} />
-                View & Download Blueprint
-              </motion.a>
-              
-              <p className="text-[10px] text-muted-foreground/60 mt-4 max-w-sm">
-                Redirects to GitHub to view and download the full high-resolution PDF file.
-              </p>
             </div>
           </div>
         </motion.div>
