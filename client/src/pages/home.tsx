@@ -389,7 +389,7 @@ export default function Home() {
             </div>
 
             {/* Amazon Links */}
-            <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-center flex-wrap">
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -409,6 +409,16 @@ export default function Home() {
                 className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
               >
                 Buy on Amazon USA
+              </motion.a>
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.amazon.de/-/en/Cultivating-Clarity-discerning-contextual-intelligence/dp/B0D477YKPZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+              >
+                Buy on Amazon Germany
               </motion.a>
             </div>
           </motion.div>
