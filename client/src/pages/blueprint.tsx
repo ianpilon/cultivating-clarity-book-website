@@ -59,44 +59,45 @@ export default function Blueprint() {
           </div>
 
           {/* PDF Preview / Download Section */}
-          <div className="flex-1 w-full bg-black/40 border border-white/10 rounded-sm relative overflow-hidden group">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-black to-black" />
-            
-            {/* Center Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-12 text-center bg-black/80 backdrop-blur-sm">
-              <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full h-full max-w-5xl bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
-              >
-                <img 
-                  src="/blueprint-preview.png" 
-                  alt="Context Mapping Blueprint Preview" 
-                  className="w-full h-full object-contain"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+          <div className="flex-1 w-full flex flex-col items-center justify-center gap-6">
+            <div className="flex-1 w-full bg-black/40 border border-white/10 rounded-sm relative overflow-hidden group">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-black to-black" />
+              
+              {/* Center Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+                <motion.div 
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="w-full h-full max-w-5xl bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
+                >
+                  <img 
+                    src="/blueprint-preview.png" 
+                    alt="Context Mapping Blueprint Preview" 
+                    className="w-full h-full object-contain"
+                  />
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Download Button - Below Image */}
+            <div className="flex flex-col items-center justify-center z-10">
+                <motion.a 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                >
+                    <Download size={16} />
+                    View & Download Blueprint
+                </motion.a>
                 
-                {/* Overlay Button */}
-                <div className="absolute bottom-12 left-0 right-0 flex flex-col items-center justify-center pointer-events-auto">
-                    <motion.a 
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        href="https://github.com/ianpilon/customercontextmap/blob/main/Customer%20Context%20Map.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-8 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
-                    >
-                        <Download size={16} />
-                        View & Download Blueprint
-                    </motion.a>
-                    
-                    <p className="text-[10px] text-muted-foreground/80 mt-4 max-w-sm drop-shadow-md">
-                        Redirects to GitHub to view and download the full high-resolution PDF file.
-                    </p>
-                </div>
-              </motion.div>
+                <p className="text-[10px] text-muted-foreground/80 mt-4 max-w-sm drop-shadow-md text-center">
+                    Redirects to GitHub to view and download the full high-resolution PDF file.
+                </p>
             </div>
           </div>
         </motion.div>
