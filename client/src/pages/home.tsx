@@ -90,9 +90,9 @@ export default function Home() {
           </motion.div>
 
           {/* Typography Overlay */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-[45%] md:left-[50%] z-30 pointer-events-none w-full">
+          <div className="absolute bottom-[15%] left-4 md:left-8 lg:left-12 z-30 pointer-events-none w-full">
             <motion.h1 
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
               className="font-display font-thin text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] text-white tracking-wide"
