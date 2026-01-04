@@ -36,7 +36,7 @@ const SOCIAL_POSTS = [
     date: "Jan 2",
     content: "would be keen to read",
     verified: false,
-    avatar: null
+    avatar: "https://pbs.twimg.com/profile_images/1257977232/plate_400x400.jpg"
   },
   {
     name: "Adam Hassan",
