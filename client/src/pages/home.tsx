@@ -529,7 +529,7 @@ export default function Home() {
             className="max-w-4xl w-full flex flex-col gap-8 h-full items-center"
           >
             {/* Social Proof Toast Popups */}
-            <div className="w-full flex justify-center mb-4">
+            <div className="w-full flex justify-center mb-4 min-h-32">
               <motion.div
                 key={currentSocialPost}
                 initial={{ opacity: 0, x: 100, scale: 0.9 }}
@@ -539,7 +539,7 @@ export default function Home() {
                   scale: showSocialPost ? 1 : 0.9
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="bg-black/90 border border-white/20 rounded-sm p-4 max-w-md shadow-2xl backdrop-blur-sm"
+                className="bg-black/90 border border-white/20 rounded-sm p-4 max-w-md shadow-2xl backdrop-blur-sm h-fit"
               >
                 <div className="flex items-start gap-3">
                   {SOCIAL_POSTS[currentSocialPost].avatar ? (
