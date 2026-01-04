@@ -37,7 +37,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl font-display font-light tracking-widest"
+          className="text-2xl font-display font-light tracking-widest text-primary"
         >
           {activeSection}/.
         </motion.div>
