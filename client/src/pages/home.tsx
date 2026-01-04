@@ -366,14 +366,6 @@ export default function Home() {
                   />
                 </motion.div>
                 
-                {/* Orange Frame Overlay */}
-                <motion.div 
-                  initial={{ opacity: 0, height: 0 }}
-                  whileInView={{ opacity: 1, height: "60%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                  className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-6 w-12 border border-primary z-20"
-                />
               </div>
 
               {/* Get in Touch Info */}
