@@ -70,48 +70,80 @@ export default function Home() {
         <div className="col-span-8 relative flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-16 pt-12">
           
           {/* Images Column */}
-          <div className="flex shrink-0 items-center justify-center gap-6 relative z-20">
-            {/* Book Cover Image */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-[25vh] h-[37.5vh] shadow-xl"
-            >
-              <img 
-                src="/bookCoverV3.png" 
-                alt="Cultivating Clarity Book Cover" 
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
-            {/* Author Image Wrapper */}
-            <div className="relative w-[25vh] h-[37.5vh]">
-              {/* Image with Grayscale */}
+          <div className="flex shrink-0 items-start justify-center gap-12 relative z-20">
+            {/* Column 1: Book + Office */}
+            <div className="flex flex-col gap-12">
+              {/* Book Cover Image */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="w-full h-full grayscale contrast-125 brightness-90"
+                className="w-[25vh] h-[37.5vh] shadow-xl"
               >
                 <img 
-                  src="/ianTBhat.jpg" 
-                  alt="Ian T Bhat" 
+                  src="/bookCoverV3.png" 
+                  alt="Cultivating Clarity Book Cover" 
                   className="w-full h-full object-cover"
-                  onError={(e) => e.currentTarget.src = heroImage}
                 />
               </motion.div>
-              
-              {/* Orange Frame Overlay */}
+
+              {/* Office Info */}
               <motion.div 
-                initial={{ opacity: 0, height: 0 }}
-                whileInView={{ opacity: 1, height: "60%" }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-6 w-12 border border-primary z-20"
-              />
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
+              >
+                <h3 className="text-white mb-2">Office</h3>
+                <p>Sandekra 240</p>
+                <p>1396 Billingstad</p>
+              </motion.div>
+            </div>
+
+            {/* Column 2: Author + Contact */}
+            <div className="flex flex-col gap-12 mt-12 md:mt-0">
+              {/* Author Image Wrapper */}
+              <div className="relative w-[25vh] h-[37.5vh]">
+                {/* Image with Grayscale */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="w-full h-full grayscale contrast-125 brightness-90"
+                >
+                  <img 
+                    src="/ianTBhat.jpg" 
+                    alt="Ian T Bhat" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => e.currentTarget.src = heroImage}
+                  />
+                </motion.div>
+                
+                {/* Orange Frame Overlay */}
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }}
+                  whileInView={{ opacity: 1, height: "60%" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+                  className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-6 w-12 border border-primary z-20"
+                />
+              </div>
+
+              {/* Get in Touch Info */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono"
+              >
+                <h3 className="text-white mb-2">Get in Touch</h3>
+                <p>T. +0085 3456 2188</p>
+                <p className="hover:text-primary transition-colors cursor-pointer">E. info@baygulov.com</p>
+              </motion.div>
             </div>
           </div>
 
@@ -317,28 +349,6 @@ export default function Home() {
 
       </div>
 
-      {/* Footer Info */}
-      <footer className="fixed bottom-0 left-0 right-0 p-12 pointer-events-none flex justify-center gap-32 text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-mono z-40">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          <h3 className="text-white mb-2">Office</h3>
-          <p>Sandekra 240</p>
-          <p>1396 Billingstad</p>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-        >
-          <h3 className="text-white mb-2">Get in Touch</h3>
-          <p>T. +0085 3456 2188</p>
-          <p className="hover:text-primary transition-colors pointer-events-auto cursor-pointer">E. info@baygulov.com</p>
-        </motion.div>
-      </footer>
     </div>
   );
 }
