@@ -25,7 +25,7 @@ export default function Home() {
           className="flex items-center gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/80"
         >
           <a href="#home" className="hover:text-white transition-colors">Cultivating Clarity</a>
-          <a href="#author" className="hover:text-white transition-colors">Author</a>
+          <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#" className="hover:text-white transition-colors">Contact</a>
           <div className="flex gap-6 text-white ml-4">
             <ShoppingBag size={18} strokeWidth={1} />
@@ -37,11 +37,11 @@ export default function Home() {
       {/* Main Content Sections */}
       <div className="w-full">
 
-        {/* Section 2: Author (Duplicated) */}
-        <section id="author" className="h-screen w-full grid grid-cols-12 grid-rows-1 relative snap-start">
+        {/* Section: About */}
+        <section id="about" className="min-h-screen w-full grid grid-cols-12 relative snap-start pt-24 pb-32">
         
         {/* Left Sidebar - Socials */}
-        <div className="col-span-2 relative flex flex-col justify-end pb-32 pl-12">
+        <div className="col-span-2 relative flex flex-col justify-end pb-12 pl-12">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,17 +67,18 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Center - Image & Title */}
-        <div className="col-span-8 relative flex items-center justify-center">
+        {/* Center - Content */}
+        <div className="col-span-8 relative flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-16 pt-12">
           
-          <div className="flex items-center justify-center gap-12 relative z-20">
+          {/* Images Column */}
+          <div className="flex shrink-0 items-center justify-center gap-6 relative z-20">
             {/* Book Cover Image */}
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-[45vh] h-[65vh] shadow-xl"
+              className="w-[25vh] h-[37.5vh] shadow-xl"
             >
               <img 
                 src="/bookCoverV3.png" 
@@ -86,8 +87,8 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* Main Image Wrapper */}
-            <div className="relative w-[45vh] h-[65vh]">
+            {/* Author Image Wrapper */}
+            <div className="relative w-[25vh] h-[37.5vh]">
               {/* Image with Grayscale */}
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -104,43 +105,56 @@ export default function Home() {
                 />
               </motion.div>
               
-              {/* Orange Frame Overlay - Outside Grayscale */}
+              {/* Orange Frame Overlay */}
               <motion.div 
                 initial={{ opacity: 0, height: 0 }}
                 whileInView={{ opacity: 1, height: "60%" }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-12 w-24 border border-primary z-20"
+                className="absolute top-[calc(50%-100px)] -translate-y-1/2 -right-6 w-12 border border-primary z-20"
               />
             </div>
           </div>
 
-          {/* Typography Overlay */}
-          <div className="absolute bottom-[15%] left-4 md:left-8 lg:left-12 z-30 pointer-events-none w-full">
-            <motion.h1 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="font-display uppercase text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] text-white tracking-widest"
-            >
-              Ian<br/>
-              <span className="ml-8 md:ml-16 lg:ml-24 flex items-center gap-4 md:gap-6 whitespace-nowrap">
-                <span className="h-[2px] w-8 md:w-16 lg:w-24 bg-white/50 block"></span>
-                Timotheos Pilon
+          {/* Text Content Column */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex flex-col gap-6 max-w-2xl text-left"
+          >
+            <h1 className="font-display uppercase text-2xl md:text-3xl leading-tight text-white tracking-widest border-b border-primary/30 pb-4">
+              Cultivating Clarity: <br/>
+              <span className="text-sm md:text-lg text-muted-foreground tracking-normal normal-case font-mono mt-2 block">
+                A Guide to Customer Contextual Intelligence
               </span>
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="mt-8 md:mt-12 ml-8 md:ml-16 lg:ml-24 max-w-xs md:max-w-sm text-xs md:text-sm text-white/70 leading-relaxed font-sans font-light border-b border-white/20 pb-4 tracking-wide"
-            >
-              Author of <span className="text-white font-normal italic">Cultivating Clarity</span>: The art of discerning what matters using <span className="text-white font-normal underline decoration-primary decoration-1 underline-offset-4">contextual intelligence</span>
-            </motion.p>
-          </div>
+            </h1>
+
+            <div className="space-y-4 text-xs md:text-sm text-muted-foreground font-mono leading-relaxed h-[50vh] overflow-y-auto pr-4 scrollbar-hide">
+              <p>
+                In an age where AI can generate solutions in seconds, the real competitive advantage isn't speed—it's understanding what problems actually matter. As AI commoditizes execution, the ability to deeply understand customer context becomes the only sustainable differentiator.
+              </p>
+              <p>
+                Through nine custom interviews with industry experts and my own decade as a Product Experience Designer, I've developed an approach that addresses the critical gap AI can't fill: knowing why customers struggle, not just what they do.
+              </p>
+              <p>
+                Right now, teams are drowning in data while starving for insight. AI tools can analyze behavior patterns, but they can't grasp the psychological, social, and emotional forces driving those behaviors. They can't understand the difference between a solution customers will tolerate and one they'll genuinely adopt. This is where <span className="text-primary">Customer Contextual Intelligence</span> becomes essential.
+              </p>
+              <p>
+                Drawing on insights from Jeff Jonas, Nick Shackleton-Jones, Bob Moesta, Michael Levin, and others, alongside my own synthesis, this book shows you how to develop the one capability AI can't replicate: human understanding of human context.
+              </p>
+              <p>
+                You'll learn frameworks like System 1/System 2 thinking, Information Foraging Theory, and Jobs to Be Done to uncover the deeper context behind customer decisions. Whether you're a product manager, UX designer, entrepreneur, or innovation leader, you'll gain practical tools to:
+              </p>
+              <ul className="list-disc pl-4 space-y-2 text-white/80 pt-2">
+                <li>Cut through AI-generated noise to identify problems worth solving</li>
+                <li>Design products that resonate functionally, emotionally, and socially</li>
+                <li>Build irreplaceable customer insight capabilities in your organization</li>
+                <li>Use AI as a tool while maintaining human judgment at the center</li>
+              </ul>
+            </div>
+          </motion.div>
         </div>
 
         {/* Right Sidebar - Pagination & Controls */}
