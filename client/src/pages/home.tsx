@@ -149,16 +149,6 @@ export default function Home() {
         
         {/* Left Sidebar - Socials */}
         <div className="col-span-2 relative flex flex-col justify-end pb-12 pl-12">
-          {/* Circle Indicator */}
-          <motion.div 
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="absolute bottom-24 left-12 w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
-          >
-            <div className="w-1.5 h-1.5 bg-white rounded-full" />
-          </motion.div>
         </div>
 
         {/* Center - Content */}
@@ -197,17 +187,6 @@ export default function Home() {
                   <p>Kitchener, ON N2G 1A7</p>
                 </motion.div>
               </div>
-              
-              {/* Circle Indicator */}
-              <motion.div 
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center"
-              >
-                <div className="w-1.5 h-1.5 bg-white rounded-full" />
-              </motion.div>
             </div>
 
             {/* Column 2: Author + Contact */}
