@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, ShoppingBag, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
 import { useEffect, useState } from "react";
 
@@ -51,10 +51,6 @@ export default function Home() {
           <a href="#video" className="hover:text-white transition-colors">Video</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</a>
-          <div className="flex gap-6 text-white ml-4">
-            <ShoppingBag size={18} strokeWidth={1} />
-            <Search size={18} strokeWidth={1} />
-          </div>
         </motion.div>
       </nav>
 
