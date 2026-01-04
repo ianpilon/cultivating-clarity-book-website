@@ -67,9 +67,9 @@ export default function Home() {
           >
             {/* Header */}
             <div className="flex flex-col gap-4 border-b border-white/10 pb-8 text-center items-center">
-              <span className="text-xs uppercase tracking-[0.2em] text-primary">Media</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-primary">Cultivating Clarity</span>
               <h1 className="font-display uppercase text-3xl md:text-5xl tracking-widest text-white">
-                Featured<br/>Video
+                Contextual<br/>Intelligence
               </h1>
             </div>
 
