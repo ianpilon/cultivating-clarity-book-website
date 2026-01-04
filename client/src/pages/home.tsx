@@ -29,6 +29,30 @@ const SOCIAL_POSTS = [
     content: "Thanks in advance for a copy of the Book",
     verified: false,
     avatar: "https://pbs.twimg.com/profile_images/1572541237865123841/D1cURNml_400x400.jpg"
+  },
+  {
+    name: "zed em",
+    handle: "@FoodyLondon",
+    date: "Jan 2",
+    content: "would be keen to read",
+    verified: false,
+    avatar: null
+  },
+  {
+    name: "Adam Hassan",
+    handle: "@adamislucky",
+    date: "Dec 31, 2025",
+    content: "Please do. I'd like a copy.",
+    verified: true,
+    avatar: null
+  },
+  {
+    name: "Igor Ilyinsky",
+    handle: "@IgorIlyin",
+    date: "Dec 31, 2025",
+    content: "Same",
+    verified: false,
+    avatar: null
   }
 ];
 
