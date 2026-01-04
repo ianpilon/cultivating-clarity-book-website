@@ -77,7 +77,7 @@ export default function Home() {
               className="w-full h-full"
             >
               <img 
-                src="/bookCoverV2.png" 
+                src="/bookCoverV3.png" 
                 alt="Cultivating Clarity Book Cover" 
                 className="w-full h-full object-cover"
                 onError={(e) => e.currentTarget.src = heroImage}
