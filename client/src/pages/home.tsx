@@ -440,7 +440,7 @@ export default function Home() {
                 href={getAmazonUrl("amazon.ca")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
               >
                 🇨🇦 Buy on Amazon Canada
               </motion.a>
@@ -450,7 +450,7 @@ export default function Home() {
                 href={getAmazonUrl("amazon.com")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
               >
                 🇺🇸 Buy on Amazon USA
               </motion.a>
@@ -460,7 +460,7 @@ export default function Home() {
                 href={getAmazonUrl("amazon.de")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors flex items-center gap-3 shadow-lg"
+                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
               >
                 🇩🇪 Buy on Amazon Germany
               </motion.a>
