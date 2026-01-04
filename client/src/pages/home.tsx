@@ -45,14 +45,6 @@ const SOCIAL_POSTS = [
     content: "Please do. I'd like a copy.",
     verified: true,
     avatar: "https://pbs.twimg.com/profile_images/1683185550805663744/w3r6KI5r_400x400.jpg"
-  },
-  {
-    name: "Igor Ilyinsky",
-    handle: "@IgorIlyin",
-    date: "Dec 31, 2025",
-    content: "Same",
-    verified: false,
-    avatar: null
   }
 ];
 
