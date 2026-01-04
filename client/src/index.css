@@ -5,7 +5,8 @@
 
 @theme inline {
   --font-sans: 'Manrope', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Share Tech Mono', monospace;
+  --font-stencil: 'Saira Stencil One', cursive;
 
   --color-background: hsl(0 0% 7%);
   --color-foreground: hsl(0 0% 90%);
