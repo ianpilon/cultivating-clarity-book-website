@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Search, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
 
+import { Link } from "wouter";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black overflow-hidden relative">
@@ -24,9 +26,8 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="flex items-center gap-12 text-xs uppercase tracking-[0.2em] text-muted-foreground/80"
         >
-          <a href="#home" className="hover:text-white transition-colors">Cultivating Clarity</a>
           <a href="#about" className="hover:text-white transition-colors">About</a>
-          <a href="#" className="hover:text-white transition-colors">Contact</a>
+          <Link href="/blueprint" className="hover:text-white transition-colors">Context Mapping Blueprint</Link>
           <div className="flex gap-6 text-white ml-4">
             <ShoppingBag size={18} strokeWidth={1} />
             <Search size={18} strokeWidth={1} />
