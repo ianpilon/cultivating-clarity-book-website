@@ -45,6 +45,30 @@ const SOCIAL_POSTS = [
     content: "Please do. I'd like a copy.",
     verified: true,
     avatar: "https://pbs.twimg.com/profile_images/1683185550805663744/w3r6KI5r_400x400.jpg"
+  },
+  {
+    name: "Lestan",
+    handle: "@lestandsouza",
+    date: "Dec 31, 2025",
+    content: "I'd love to read it",
+    verified: false,
+    avatar: null
+  },
+  {
+    name: "Steve Peterson",
+    handle: "@EmergencyComms",
+    date: "Dec 31, 2025",
+    content: "I'd be interested in reading it, thank you.",
+    verified: false,
+    avatar: null
+  },
+  {
+    name: "Haba(rosso)nero",
+    handle: "@habarossonero",
+    date: "Jan 1",
+    content: "I'd like a copy too. Thanks",
+    verified: false,
+    avatar: null
   }
 ];
 
