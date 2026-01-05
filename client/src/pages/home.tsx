@@ -582,9 +582,9 @@ export default function Home() {
                 href={getAmazonUrl("amazon.ca")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
+                className="px-8 py-4 bg-transparent border-2 border-primary text-white font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
               >
-                🇨🇦 Buy on Amazon Canada
+                <span className="text-lg">🇨🇦</span> Buy on Amazon Canada
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05 }}
@@ -592,9 +592,9 @@ export default function Home() {
                 href={getAmazonUrl("amazon.com")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
+                className="px-8 py-4 bg-transparent border-2 border-primary text-white font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-colors flex items-center gap-3"
               >
-                🇺🇸 Buy on Amazon USA
+                <span className="text-lg">🇺🇸</span> Buy on Amazon USA
               </motion.a>
               {/* Country Selector Dropdown - styled as button */}
               <div className="relative">
