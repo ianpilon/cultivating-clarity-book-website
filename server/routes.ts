@@ -15,15 +15,21 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Invalid email address" });
       }
 
-      const existing = await storage.getEmailSubscriberByEmail(result.data.email);
-      if (existing) {
-        sendDownloadNotification(result.data.email).catch(() => {});
-        return res.status(200).json({ message: "Already subscribed", subscriber: existing });
-      }
+      try {
+        const existing = await storage.getEmailSubscriberByEmail(result.data.email);
+        if (existing) {
+          sendDownloadNotification(result.data.email).catch(() => {});
+          return res.status(200).json({ message: "Already subscribed", subscriber: existing });
+        }
 
-      const subscriber = await storage.createEmailSubscriber(result.data);
-      sendDownloadNotification(result.data.email).catch(() => {});
-      return res.status(201).json({ message: "Subscribed successfully", subscriber });
+        const subscriber = await storage.createEmailSubscriber(result.data);
+        sendDownloadNotification(result.data.email).catch(() => {});
+        return res.status(201).json({ message: "Subscribed successfully", subscriber });
+      } catch (dbError) {
+        console.error("Database error (allowing download anyway):", dbError);
+        sendDownloadNotification(result.data.email).catch(() => {});
+        return res.status(200).json({ message: "Download allowed", email: result.data.email });
+      }
     } catch (error) {
       console.error("Error subscribing:", error);
       return res.status(500).json({ error: "Failed to subscribe" });
