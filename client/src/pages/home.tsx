@@ -608,7 +608,7 @@ export default function Home() {
                   <span>
                     {selectedCountry 
                       ? `${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.flag} ${AMAZON_COUNTRIES.find(c => c.code === selectedCountry)?.name}`
-                      : "🌍 Other Countries"
+                      : <><span className="text-lg">🌍</span> Other Countries</>
                     }
                   </span>
                   <ChevronDown size={16} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
