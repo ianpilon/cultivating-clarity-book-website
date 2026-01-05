@@ -642,6 +642,15 @@ export default function Home() {
         </div>
         </section>
 
+        {/* Footer Polaroids */}
+        <div className="w-full">
+          <img 
+            src="/attached_assets/poliroids_1767624991769.png" 
+            alt="Readers with Cultivating Clarity book" 
+            className="w-full object-cover"
+          />
+        </div>
+
       </div>
 
     </div>
