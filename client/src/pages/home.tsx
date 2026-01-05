@@ -636,19 +636,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Polaroids */}
-            <div className="w-full mt-[50px]">
-              <img 
-                src={polaroidsImage} 
-                alt="Readers with Cultivating Clarity book" 
-                className="w-full object-cover"
-              />
-            </div>
-          </motion.div>
+            </motion.div>
         </div>
 
         {/* Right Sidebar */}
         <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
+        </div>
+
+        {/* Polaroids - Full width below buttons */}
+        <div className="col-span-12 mt-[50px]">
+          <img 
+            src={polaroidsImage} 
+            alt="Readers with Cultivating Clarity book" 
+            className="w-full object-cover"
+          />
         </div>
         </section>
 
