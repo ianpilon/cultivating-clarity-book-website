@@ -17,12 +17,12 @@ export async function registerRoutes(
 
       const existing = await storage.getEmailSubscriberByEmail(result.data.email);
       if (existing) {
-        sendDownloadNotification(result.data.email);
+        sendDownloadNotification(result.data.email).catch(() => {});
         return res.status(200).json({ message: "Already subscribed", subscriber: existing });
       }
 
       const subscriber = await storage.createEmailSubscriber(result.data);
-      sendDownloadNotification(result.data.email);
+      sendDownloadNotification(result.data.email).catch(() => {});
       return res.status(201).json({ message: "Subscribed successfully", subscriber });
     } catch (error) {
       console.error("Error subscribing:", error);
