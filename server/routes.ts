@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertEmailSubscriberSchema } from "@shared/schema";
+import { sendDownloadNotification } from "./email";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -16,10 +17,12 @@ export async function registerRoutes(
 
       const existing = await storage.getEmailSubscriberByEmail(result.data.email);
       if (existing) {
+        sendDownloadNotification(result.data.email);
         return res.status(200).json({ message: "Already subscribed", subscriber: existing });
       }
 
       const subscriber = await storage.createEmailSubscriber(result.data);
+      sendDownloadNotification(result.data.email);
       return res.status(201).json({ message: "Subscribed successfully", subscriber });
     } catch (error) {
       console.error("Error subscribing:", error);
