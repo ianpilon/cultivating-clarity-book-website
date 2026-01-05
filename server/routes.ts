@@ -1,16 +1,31 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { insertEmailSubscriberSchema } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
+  app.post("/api/subscribe", async (req, res) => {
+    try {
+      const result = insertEmailSubscriberSchema.safeParse(req.body);
+      if (!result.success) {
+        return res.status(400).json({ error: "Invalid email address" });
+      }
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+      const existing = await storage.getEmailSubscriberByEmail(result.data.email);
+      if (existing) {
+        return res.status(200).json({ message: "Already subscribed", subscriber: existing });
+      }
+
+      const subscriber = await storage.createEmailSubscriber(result.data);
+      return res.status(201).json({ message: "Subscribed successfully", subscriber });
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      return res.status(500).json({ error: "Failed to subscribe" });
+    }
+  });
 
   return httpServer;
 }

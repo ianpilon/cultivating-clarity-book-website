@@ -1,13 +1,14 @@
-import { type User, type InsertUser } from "@shared/schema";
+import { type User, type InsertUser, type InsertEmailSubscriber, type EmailSubscriber, emailSubscribers } from "@shared/schema";
 import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber>;
+  getEmailSubscriberByEmail(email: string): Promise<EmailSubscriber | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -32,6 +33,16 @@ export class MemStorage implements IStorage {
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
+  }
+
+  async createEmailSubscriber(subscriber: InsertEmailSubscriber): Promise<EmailSubscriber> {
+    const [result] = await db.insert(emailSubscribers).values(subscriber).returning();
+    return result;
+  }
+
+  async getEmailSubscriberByEmail(email: string): Promise<EmailSubscriber | undefined> {
+    const [result] = await db.select().from(emailSubscribers).where(eq(emailSubscribers.email, email));
+    return result;
   }
 }
 
