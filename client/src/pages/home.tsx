@@ -635,6 +635,15 @@ export default function Home() {
                 )}
               </div>
             </div>
+
+            {/* Polaroids */}
+            <div className="w-full pt-[50px]">
+              <img 
+                src={polaroidsImage} 
+                alt="Readers with Cultivating Clarity book" 
+                className="w-full object-cover"
+              />
+            </div>
           </motion.div>
         </div>
 
@@ -642,15 +651,6 @@ export default function Home() {
         <div className="col-span-2 relative flex flex-col justify-center items-end pr-12">
         </div>
         </section>
-
-        {/* Footer Polaroids */}
-        <div className="w-full">
-          <img 
-            src={polaroidsImage} 
-            alt="Readers with Cultivating Clarity book" 
-            className="w-full object-cover"
-          />
-        </div>
 
       </div>
 
