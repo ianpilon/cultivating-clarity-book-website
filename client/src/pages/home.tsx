@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, ChevronDown } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
+import polaroidsImage from "@assets/poliroids_1767624991769.png";
 import { useEffect, useState, useRef } from "react";
 
 const BOOK_ASIN = "B0D477YKPZ";
@@ -645,7 +646,7 @@ export default function Home() {
         {/* Footer Polaroids */}
         <div className="w-full">
           <img 
-            src="/attached_assets/poliroids_1767624991769.png" 
+            src={polaroidsImage} 
             alt="Readers with Cultivating Clarity book" 
             className="w-full object-cover"
           />
