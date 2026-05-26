@@ -1,9 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Download, ChevronDown, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Download, ChevronDown } from "lucide-react";
 import heroImage from "@assets/generated_images/dark_veiled_figure_art_photography.png";
 import polaroidsImage from "@assets/poliroids_1767624991769.png";
 import { useEffect, useState, useRef } from "react";
-import { apiRequest } from "@/lib/queryClient";
 
 const BOOK_ASIN = "B0D477YKPZ";
 
@@ -134,10 +133,6 @@ export default function Home() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [currentSocialPost, setCurrentSocialPost] = useState(0);
   const [showSocialPost, setShowSocialPost] = useState(true);
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [emailError, setEmailError] = useState("");
 
   const getAmazonUrl = (domain: string) => {
     return `https://www.${domain}/dp/${BOOK_ASIN}`;
@@ -153,34 +148,12 @@ export default function Home() {
   };
 
   const handleDownloadClick = () => {
-    setShowEmailModal(true);
-  };
-
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmailError("");
-    
-    if (!email || !email.includes("@")) {
-      setEmailError("Please enter a valid email address");
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      await apiRequest("POST", "/api/subscribe", { email });
-      setShowEmailModal(false);
-      setEmail("");
-      const link = document.createElement("a");
-      link.href = "/Customer_Context_Map.pdf";
-      link.download = "Customer_Context_Map.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      setEmailError("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const link = document.createElement("a");
+    link.href = `${import.meta.env.BASE_URL}Customer_Context_Map.pdf`;
+    link.download = "Customer_Context_Map.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   useEffect(() => {
@@ -352,7 +325,7 @@ export default function Home() {
                   className="w-[25vh] h-[37.5vh] shadow-xl"
                 >
                   <img 
-                    src="/bookCoverV3.png" 
+                    src={`${import.meta.env.BASE_URL}bookCoverV3.png`}
                     alt="Cultivating Clarity Book Cover" 
                     className="w-full h-full object-cover"
                   />
@@ -386,7 +359,7 @@ export default function Home() {
                   className="w-full h-full grayscale contrast-125 brightness-90"
                 >
                   <img 
-                    src="/ianTBhat.jpg" 
+                    src={`${import.meta.env.BASE_URL}ianTBhat.jpg`}
                     alt="Ian T Bhat" 
                     className="w-full h-full object-cover"
                     onError={(e) => e.currentTarget.src = heroImage}
@@ -509,7 +482,7 @@ export default function Home() {
                     className="w-full h-full max-w-5xl bg-white/5 border border-white/20 flex items-center justify-center rounded shadow-2xl relative overflow-hidden"
                   >
                     <img 
-                      src="/blueprint-preview.png" 
+                      src={`${import.meta.env.BASE_URL}blueprint-preview.png`}
                       alt="Context Mapping Blueprint Preview" 
                       className="w-full h-full object-contain"
                     />
@@ -690,67 +663,6 @@ export default function Home() {
         </section>
 
       </div>
-
-      {/* Email Modal */}
-      <AnimatePresence>
-        {showEmailModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setShowEmailModal(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-black border border-primary/50 p-8 max-w-md w-full relative"
-            >
-              <button
-                onClick={() => setShowEmailModal(false)}
-                className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
-                data-testid="button-close-modal"
-              >
-                <X size={20} />
-              </button>
-              
-              <h2 className="font-display uppercase text-2xl tracking-widest text-white mb-4">
-                Get the Blueprint
-              </h2>
-              <p className="text-sm text-muted-foreground font-mono mb-6">
-                Enter your email to download the free Context Mapping Blueprint. We may occasionally follow up to learn how you're using contextual intelligence.
-              </p>
-              
-              <form onSubmit={handleEmailSubmit} className="flex flex-col gap-4">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/20 text-white font-mono text-sm focus:outline-none focus:border-primary transition-colors"
-                  data-testid="input-email"
-                />
-                {emailError && (
-                  <p className="text-red-400 text-xs font-mono">{emailError}</p>
-                )}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-primary text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  data-testid="button-submit-email"
-                >
-                  <Download size={16} />
-                  {isSubmitting ? "Processing..." : "Download Blueprint"}
-                </motion.button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
     </div>
   );
